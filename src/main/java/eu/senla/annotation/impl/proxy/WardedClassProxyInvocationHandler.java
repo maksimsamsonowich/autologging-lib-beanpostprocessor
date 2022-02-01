@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Component
-public class WardedClassProxy implements InvocationHandler {
+public class WardedClassProxyInvocationHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

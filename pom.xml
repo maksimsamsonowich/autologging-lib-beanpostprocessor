@@ -31,6 +31,14 @@
             <version>2.0.0-alpha6</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.2.12</version>
+        </dependency>
+
+
     </dependencies>
 
     <properties>
