@@ -1,16 +1,16 @@
 package eu.senla.autoconfiguration;
 
-import eu.senla.proxy.impl.ObserveHandlerProxyConfigurator;
+import eu.senla.beanpostprocessor.ObserveAnnotationBeanPostProcessor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Conditional;
 
-@ConditionalOnClass( { ObserveHandlerProxyConfigurator.class } )
+@ConditionalOnClass( { ObserveAnnotationBeanPostProcessor.class } )
 public class ObserveAutoConfiguration {
 
     @Bean
-    public ObserveHandlerProxyConfigurator observeHandlerProxyConfigurator() {
-        return new ObserveHandlerProxyConfigurator();
+    @ConditionalOnMissingBean
+    public ObserveAnnotationBeanPostProcessor beanPostProcessor() {
+        return new ObserveAnnotationBeanPostProcessor();
     }
-
 }
